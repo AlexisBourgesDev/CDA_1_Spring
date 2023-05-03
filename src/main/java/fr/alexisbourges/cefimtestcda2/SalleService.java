@@ -10,18 +10,18 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-class SalleService{
+public class SalleService{
 
     @Autowired
     private SalleRepository salleRepository;
 
 
-    @EventListener(ApplicationReadyEvent.class)
-    void launchTest(){
+    public List<Salle> launchTest(){
         List<Salle> salles = salleRepository.findAll();
         int t = 0;
-        salleRepository.save(new Salle());
-        List<Salle> salles2 = salleRepository.findAll();
-        t = 1;
+        return salles;
+        //salleRepository.save(new Salle());
+        //List<Salle> salles2 = salleRepository.findAll();
+        //t = 1;
     }
 }
