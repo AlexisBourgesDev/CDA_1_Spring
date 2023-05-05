@@ -21,7 +21,7 @@ public class Salle {
     @Schema(description = "Nom de la salle", example = "MAME-016", required = true)
     String name = null;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn( name="id_site")
     Site site = null;
 
@@ -35,5 +35,9 @@ public class Salle {
 
     public Site getSite() {
         return site;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
